@@ -1,0 +1,15 @@
+rf2o_laser_odometry:
+  ros__parameters:
+    laser_scan_topic: "/scan"
+    odom_topic: "/odom"
+    publish_tf: true
+    base_frame_id: "base_footprint"
+    odom_frame_id: "odom"
+    init_pose_from_topic: ""
+    freq: 10.0
+    pose_covariance_x: 0.001
+    pose_covariance_y: 0.001
+    pose_covariance_yaw: 0.001
+    twist_covariance_vx: 0.001
+    twist_covariance_vy: 0.001
+    twist_covariance_vyaw: 0.001

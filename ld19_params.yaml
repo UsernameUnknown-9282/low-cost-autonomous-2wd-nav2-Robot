@@ -1,0 +1,14 @@
+ld19_lidar_driver:
+  ros__parameters:
+    port_name: "/dev/ldlidar"
+    port_baudrate: 230400
+    frame_id: "laser_frame"
+    base_frame_id: "base_link"
+    base_footprint_frame: "base_footprint"
+    topic_name: "/scan"
+    range_min: 0.02
+    range_max: 12.0
+    num_bins: 450
+    publish_static_tf: true
+    mock_hardware: false
+    mock_fallback: true

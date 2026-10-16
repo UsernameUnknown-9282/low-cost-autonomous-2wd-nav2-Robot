@@ -1,0 +1,32 @@
+motor_driver_node:
+  ros__parameters:
+    # Differential Drive Geometry
+    track_width: 0.14          # Distance between wheels in meters
+    wheel_radius: 0.033        # Wheel radius in meters (diameter ~0.066 m)
+    max_wheel_speed: 0.40      # Max linear wheel speed in m/s at 100% PWM
+    deadband_speed: 0.02       # Speed threshold (m/s) below which motors are stopped
+
+    # Motor PWM & Friction Compensation
+    min_pwm: 0.28              # Minimum starting PWM duty cycle (28%) to overcome gearbox stiction
+    max_pwm: 1.00              # Maximum PWM duty cycle (100%)
+    pwm_frequency: 1000        # PWM frequency in Hz
+
+    # Safety Watchdog
+    watchdog_timeout_sec: 0.300 # Cut motor power if no /cmd_vel received in 300 ms
+
+    # Operating Mode
+    mock_hardware: false       # Force mock driver (automatically falls back if GPIO unavailable)
+    cmd_vel_topic: "/cmd_vel"  # Subscribed Twist topic
+
+    # TB6612FNG Pin Assignments (BCM GPIO numbers)
+    pin_stby: 22               # STBY (Standby Enable)
+    pin_left_pwm: 12           # Left Motor PWMA
+    pin_left_ain1: 5           # Left Motor AIN1
+    pin_left_ain2: 6           # Left Motor AIN2
+    pin_right_pwm: 13          # Right Motor PWMB
+    pin_right_bin1: 23         # Right Motor BIN1
+    pin_right_bin2: 24         # Right Motor BIN2
+
+    # Physical Wiring Inversion
+    invert_left_motor: false   # Set true if left motor spins backward when commanded forward
+    invert_right_motor: false  # Set true if right motor spins backward when commanded forward
